@@ -3,7 +3,7 @@ package extension.locale;
 class Locale {
 
 	private static var _getLangCode:Void->String =
-		#if android
+		#if (android && false)
 			openfl.utils.JNI.createStaticMethod("localeExtension/Locale", "getLangCode", "()Ljava/lang/String;");
 		#elseif ios
 			cpp.Lib.load("openflLocaleExtension","get_lang_code",0);
